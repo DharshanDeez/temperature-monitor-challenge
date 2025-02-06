@@ -1,141 +1,131 @@
-# Real-Time Temperature Monitoring System Challenge 🚀
+# Real-Time Temperature Monitoring System
 
-Welcome to our Senior Full-Stack Developer technical challenge! This challenge invites you to build a modern, real-time temperature monitoring system that showcases your expertise in full-stack development and microservices architecture.
+A real-time temperature monitoring system built with **Next.js** (frontend), **Node.js** (backend), and **MongoDB** (database). The system displays real-time temperature readings and updates the status (`NORMAL` or `HIGH`) based on predefined thresholds.
 
-## 🎯 Challenge Overview
+## Features
 
-Create a sophisticated real-time temperature monitoring system that processes and visualizes temperature data through a modern web interface. Your solution will demonstrate your ability to:
+- **Real-Time Updates**: Temperature readings are updated every 2 seconds
+- **Status Indicators**: Displays `NORMAL` (green) or `HIGH` (red) status for each reading
+- **Recent Readings**: Shows the last 5 temperature readings with timestamps
+- **Responsive UI**: Built with **Tailwind CSS** for a clean and modern design
 
--   Implement real-time data streams
--   Design service-oriented architecture
--   Create responsive user interfaces
--   Integrate workflow automation
--   Handle distributed system challenges
+## Technologies Used
 
-## 🏗️ System Architecture
+- **Frontend**: Next.js, Tailwind CSS
+- **Backend**: Node.js, Express, Socket.io
+- **Database**: MongoDB
+- **Real-Time Communication**: Socket.io
 
-![System Architecture](./assets/architecture.png)
+## Setup Instructions
 
-The system comprises four main components:
+### Prerequisites
 
--   **Frontend**: Real-time dashboard built with React
--   **Backend**: Node.js service for data generation and processing
--   **Database**: MongoDB for data persistence
--   **Processing**: n8n workflow (preferred) or Node.js processing service
+- Node.js (v18 or higher)
+- MongoDB (local or MongoDB Atlas)
+- npm or yarn
 
-### Processing Approach Options
+### Installation
 
-1. **Preferred Approach: n8n Workflow Integration**
+1. **Clone the Repository**
 
-    - Implement temperature processing using n8n workflows
-    - Demonstrates ability to work with workflow automation tools
-    - Shows understanding of service integration
+   ```bash
+   git clone <Repository_url>
+   cd Folder_Name
+   ```
 
-2. **Alternative Approach: Node.js Processing**
-    - Implement temperature processing directly in Node.js
-    - Use if n8n integration presents significant challenges
-    - Must maintain same data flow and processing logic
+2. **Set Up the Backend**
 
-## 💡 Core Features
+   ```bash
+   # Navigate to the backend directory
+   cd temperature-monitor-backend
 
-### Main Dashboard
+   # Install dependencies
+   npm install
 
-![Main Dashboard](./assets/normal-state.png)
+   # Create .env file and add MongoDB connection string
+   echo "MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/temperatureDB?retryWrites=true&w=majority" > .env
 
--   Real-time temperature display (2-second updates)
--   Connection status indicator
--   Last 5 readings with timestamps
--   Status badges (NORMAL/HIGH) updated after processing
-    -   Initial reading shows temperature only
-    -   Status updates post-processing
+   # Start the backend server
+   node server.js
+   ```
 
-## ⏱️ Time Expectations
+3. **Set Up the Frontend**
 
-While you have 24 hours to submit, expect to spend 2-3 hours of focused development time. The window allows for:
+   ```bash
+   # Navigate to the frontend directory
+   cd temperature-monitor-frontend
 
--   Core implementation
--   Documentation
--   Testing and refinement
--   Optional n8n workflow setup
+   # Install dependencies
+   npm install
 
-## 📋 Submission Requirements
+   # Create .env file and add backend API URL
+   echo "NEXT_PUBLIC_API_URL=http://localhost:5000" > .env
 
-### Repository Structure
+   # Start the frontend development server
+   npm run dev
+   ```
+
+4. **Access the Application**
+   - Open your browser and navigate to `http://localhost:3000`
+
+### MongoDB Setup
+
+- If using MongoDB Atlas:
+  - Ensure your IP address is whitelisted in the MongoDB Atlas dashboard
+- If using local MongoDB:
+  - Ensure the MongoDB server is running
+
+## Project Structure
 
 ```
-your-solution/
-├── frontend/
-│   ├── src/
-│   └── Dockerfile
-├── backend/
-│   ├── src/
-│   └── Dockerfile
-├── n8n/               # If using n8n approach
-│   └── workflows/
-├── docker-compose.yml
+temperature-monitor/
+├── temperature-monitor-backend/
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+├── temperature-monitor-frontend/
+│   ├── pages/
+│   │   └── index.js
+│   ├── styles/
+│   │   └── globals.css
+│   ├── package.json
+│   └── .env
 └── README.md
 ```
 
-### Required Documentation
+## Environment Variables
 
-1. Setup Instructions
-2. API Documentation
-3. Architecture Overview
-4. Processing Approach Documentation
-    - Clearly indicate chosen approach
-    - Explain implementation decisions
+### Backend (.env)
 
-## 🎯 Evaluation Criteria
+- `MONGODB_URI`: MongoDB connection string
 
-### Technical Excellence (40%)
+### Frontend (.env)
 
--   Code quality and organization
--   System architecture
--   Performance considerations
--   Error handling
--   Testing approach
+- `NEXT_PUBLIC_API_URL`: Backend API URL (e.g., `http://localhost:5000`)
 
-### Feature Implementation (30%)
+## Running the Application
 
--   Real-time functionality
--   Data processing implementation
-    -   n8n implementation (+10 bonus points)
-    -   Node.js implementation (standard points)
--   UI/UX execution
--   Service integration
+1. Start the backend server:
 
-### Best Practices (30%)
+   ```bash
+   cd temperature-monitor-backend
+   npm run dev
+   ```
 
--   Documentation quality
--   Git practices
--   Code organization
--   Development setup
+2. Start the frontend development server:
 
-## 🚀 Getting Started
+   ```bash
+   cd temperature-monitor-frontend
+   npm run dev
+   ```
 
-1. Review `specification.md`
-2. Choose processing approach
-3. Begin implementation
+3. Open your browser and navigate to `http://localhost:3000`
 
-## 📮 Submission Process
+Support
+If you have any questions, suggestions, or run into any issues, feel free to:
 
-1. Create a public GitHub repository
-2. Implement your solution
-3. Add comprehensive documentation
-4. Share the repository URL
+Open an issue in the repository
+Contact me at dharshandeez111@gmail.com
+Connect with me on https://www.linkedin.com/in/dharshan-a-1a9984278/
 
-## 🎯 Success Criteria
-
-Your solution should demonstrate:
-
--   Clean, maintainable code
--   Robust real-time data handling
--   Thoughtful architecture decisions
--   Professional documentation
--   Successful processing implementation (either approach)
-
-Ready to showcase your expertise? Let's see what you can build! 🚀
-
-## 🤝 Questions?
-
-For any clarifications, feel free to reach out via LinkedIn.
+I'm always happy to help! 😊
