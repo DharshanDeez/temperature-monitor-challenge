@@ -45,8 +45,6 @@ A real-time temperature monitoring system built with **Next.js** (frontend), **N
    # Create .env file and add MongoDB connection string
    echo "MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/temperatureDB?retryWrites=true&w=majority" > .env
 
-   # Start the backend server
-   node server.js
    ```
 
 3. **Set Up the Frontend**
@@ -61,8 +59,6 @@ A real-time temperature monitoring system built with **Next.js** (frontend), **N
    # Create .env file and add backend API URL
    echo "NEXT_PUBLIC_API_URL=http://localhost:5000" > .env
 
-   # Start the frontend development server
-   npm run dev
    ```
 
 4. **Access the Application**
@@ -108,15 +104,21 @@ temperature-monitor/
 1. Start the backend server:
 
    ```bash
-   cd temperature-monitor-backend
-   npm run dev
+    - cd temperature-monitor-backend
+    - npm run dev
+         (or)
+   # use Docker command
+    - docker-compose up
    ```
 
 2. Start the frontend development server:
 
    ```bash
    cd temperature-monitor-frontend
-   npm run dev
+     - npm run dev
+          (or)
+   # use Docker command
+     - docker-compose up
    ```
 
 3. Open your browser and navigate to `http://localhost:3000`
